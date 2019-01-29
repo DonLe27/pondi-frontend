@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap"
+import { Button, FormGroup, FormControl, ControlLabel, Alert } from "react-bootstrap"
 
 
 const Login = () => (
@@ -19,6 +19,14 @@ const RegisterButton = () => (
 )
 
 
+const checkRender = (num) => {
+	if(num < 7)
+		return (
+		<Alert variant='danger'>
+            Password must be at least 8 characters.
+        </Alert>    
+	); 	
+}
 
 class LoginForm extends React.Component {
 	state = {
@@ -52,7 +60,7 @@ class LoginForm extends React.Component {
 
 	validateForm() {
 		return this.state.email.length > 0
-		&& this.state.password.length > 0;
+		&& this.state.password.length > 7;
 	}
 
 	render() {
@@ -83,6 +91,9 @@ class LoginForm extends React.Component {
                 	/>
             	</FormGroup>
 
+            	{checkRender(this.state.password.length)}
+            		
+
 			<Button
                 block
                 bsSize="large"
@@ -90,6 +101,8 @@ class LoginForm extends React.Component {
                 type="submit"
             >Log In
             </Button>
+
+
 
 
 				</form>
