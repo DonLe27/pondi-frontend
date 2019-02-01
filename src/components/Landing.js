@@ -1,12 +1,18 @@
 import React from 'react';
 import LoginButton from './LoginButton';
 import { Link } from 'react-router-dom';
+import "../styles/landing.css";
 
 const Landing = () => (
+
+
   <div>
-    <LoginButton />
-    <h1>pondi</h1>
-    <Form />
+	<link href="../styles/landing.css" rel="stylesheet"></link>
+
+    <LoginButton className="LoginButton"/>
+    <div className="PondiCircles"></div>
+    <h1 className="LandingTitle">pondi</h1>
+    <Form className="LandingPrompt"/>
   </div>
 )
 
@@ -43,8 +49,8 @@ class Form extends React.Component {
             </div>
 
             // <form onSubmit={this.handleSubmit}>
-                
-            //     <label>
+               
+             //     <label>
             //         is water wet?
             //         <input type="text" value={this.state.value} onChange={this.handleChange} />
             //     </label>
