@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+src/components/Archive.js 
+src/components/Ocean.js 
+src/components/SideBar.js 
+src/components/SpiritAnimal.js 
+src/components/Stream.js

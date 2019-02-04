@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Button, FormGroup, FormControl, ControlLabel, Alert } from "react-bootstrap"
+import "../styles/login.css";
 
 
 const Login = () => (
-	<div>
+	<div className="Login">
 	<h1>Log in to Pondi</h1>
-	<LoginForm />
+	<LoginForm/>
 	<RegisterButton />
 	</div>
 )
@@ -23,7 +24,7 @@ const checkRender = (num) => {
 	if(num < 7)
 		return (
 		<Alert variant='danger'>
-            Password must be at least 8 characters.
+            Password must be at least 8 characters. ( {8 - num} characters remaining)
         </Alert>    
 	); 	
 }
@@ -64,7 +65,7 @@ class LoginForm extends React.Component {
 	}
 
 	render() {
-		if (this.state.toProfile === true) {
+		if (this.state.toProfile == true) {
 					
 		}
 
@@ -72,7 +73,7 @@ class LoginForm extends React.Component {
 				<form onSubmit={this.handleSubmit}>
 
 				<FormGroup controlId="email" bsSize="large">
-					<ControlLabel>Email</ControlLabel>
+					<ControlLabel bsClass="LoginForm">Email</ControlLabel>
 					<FormControl 
 					autoFocus 
 					type="email" 
@@ -81,7 +82,7 @@ class LoginForm extends React.Component {
 					/>
 				</FormGroup>
 
-				<FormGroup controlId="password" bsSize="large">
+				<FormGroup controlId="password" bsSize="large" >
             		<ControlLabel>Password</ControlLabel>
                 	<FormControl
                 	autoFocus

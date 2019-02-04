@@ -3,14 +3,24 @@ import LoginButton from './LoginButton';
 import { Link } from 'react-router-dom';
 import "../styles/landing.css";
 
+function randomSize(size)
+{
+    var sx = Math.round(Math.random() * size);
+    return sx + "px";
+}
+
+
 const Landing = () => (
-
-
-  <div>
+  //  {randomSize(10);}
+  <div className="Landing">
 	<link href="../styles/landing.css" rel="stylesheet"></link>
 
     <LoginButton className="LoginButton"/>
-    <div className="PondiCircles"></div>
+    <div className="PondiCircles one"></div>
+    <div className="PondiCircles two" ></div>
+    <div className="PondiCircles three" ></div>
+    <div className="PondiCircles four" ></div>
+
     <h1 className="LandingTitle">pondi</h1>
     <Form className="LandingPrompt"/>
   </div>

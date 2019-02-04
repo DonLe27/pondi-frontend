@@ -1,0 +1,14 @@
+.Login h1 {
+	font-family: Barlow, sans-serif;
+	font-style: normal;
+	font-weight: 100;
+	line-height: normal;
+	font-size: 3vw;
+	text-align: center;
+	color: #598EA4;
+}
+
+
+.Login .LoginForm {
+	text-align: center;	
+}
