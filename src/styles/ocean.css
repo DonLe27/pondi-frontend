@@ -1,0 +1,6 @@
+.Ocean {
+	width: calc(70vw - 10px);
+	float: right;
+	height: calc(100vh - 10px);
+	border: solid 5px black;
+}
