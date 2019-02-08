@@ -7,7 +7,7 @@ import '../styles/ocean.css';
 
 
 const Ocean = () => (
-	<div>Ocean</div>
+	<div className="Ocean">This is an Ocean</div>
 )
 
 export default Ocean

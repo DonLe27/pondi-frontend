@@ -7,7 +7,10 @@ import '../styles/stream.css';
 
 
 const Stream = () => (
-	<div className="Stream">This is a stream</div>
+	<div className="Stream">This is a Stream</div>
 )
+
+
+
 
 export default Stream

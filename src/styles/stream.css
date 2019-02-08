@@ -1,6 +1,10 @@
 .Stream {
-	width: calc(70vw - 10px);
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+		width: calc(70%);
 	float: right;
-	height: calc(100vh - 10px);
+	height: calc(100vh);
 	border: solid 5px black;
+
 }

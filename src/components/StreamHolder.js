@@ -3,45 +3,77 @@ import { Link } from 'react-router-dom';
 import { Button, FormGroup, FormControl, ControlLabel, Alert } from "react-bootstrap";
 import { CSSTransitionGroup } from 'react-transition-group'; // ES6
 import '../styles/transitions.css';
-import '../styles/stream.css';
+import '../styles/streamholder.css';
+
 import Stream from './Stream.js';
 import Ocean from './Ocean.js';
+import Archive from './Archive.js';
 import SideBar from './SideBar.js';
 
 
 class StreamHolder extends React.Component{
 
 
-	selectNext = (i) => {
-		handleRemove(i);
-	}
-
-	
-	constructor(props) {
+  constructor(props) {
+         
     super(props);
-    this.state = {items: [ <SideBar />, <Stream selectNext={this.selectNext()}/>]};
-    //this.handleAdd = this.handleAdd.bind(this);
+    this.state = {
+        leftSide: <SideBar 
+            addStream={this.addStream.bind(this)} 
+            addArchive={this.addArchive.bind(this)}
+            addOcean={this.addOcean.bind(this)}
+            />,
+        rightSide: <Stream />
+    };
+    this.handleAdd = this.handleAdd.bind(this);
+    this.addStream = this.addStream.bind(this);
+    this.addOcean = this.addStream.bind(this);
+    this.addArchive = this.addStream.bind(this);
+
+  }
+
+  handleAdd(i) {
+  }
+
+  addStream(i){
+    this.setState({rightSide: 0});
+    const right = <Stream key={0}/>;
+    this.setState({rightSide: right});
+
+  }
+
+  addOcean (i){
+
+    this.setState({rightSide: 0});
+    const right = <Ocean key={1}/>;
+    this.setState({rightSide: right});
+
+  }
+
+  addArchive (i){
+
+    this.setState({rightSide: 0});
+    const right = <Archive key={2}/>;
+    this.setState({rightSide: right});
   }
 
 
-	render(){
-		const items = this.state.items.map((item, i) => (
-      	<div>
-        	{item}
-      	</div>
-    	));
+ 
 
+
+	render(){
+		
+    ;
 
 		return (
-		<div>
+		<div key={this.state.rightSide}>
         <CSSTransitionGroup
           transitionName="example"
           transitionAppear={true}
-          transitionEnterTimeout={3000}
-          transitionLeaveTimeout={3000}
           transitionEnter={true}
       		transitionLeave={true}>
-      		{items}
+      		{this.state.leftSide}
+          {this.state.rightSide}
         </CSSTransitionGroup>
       </div>);
 	}

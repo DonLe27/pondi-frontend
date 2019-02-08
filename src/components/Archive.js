@@ -7,7 +7,7 @@ import '../styles/archive.css';
 
 
 const Archive = () => (
-	<div>Archive</div>
+	<div className = "Archive">This is an Archive</div>
 )
 
 export default Archive

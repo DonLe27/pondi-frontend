@@ -1,6 +1,9 @@
 .SideBar {
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 	float: left;
-	width: calc(30vw - 10px);
-	height: calc(100vh - 10px);
+	width: calc(30%);
+	height: calc(100vh);
 	border: solid 5px black;
 }

@@ -10,7 +10,7 @@ import Login from './Login.js'
 class TodoList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {items: [ <Landing />]};
+    this.state = {items: [ <Landing /> ]};
     this.handleAdd = this.handleAdd.bind(this);
   }
 
