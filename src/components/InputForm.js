@@ -7,7 +7,8 @@ class InputForm extends React.Component {
     super(props);
     this.state = {
       imagefile: null,
-      text: ""
+      text: "",
+      prompt: "Hello"
     };
   }
 
@@ -27,11 +28,12 @@ class InputForm extends React.Component {
     console.log(this.state.text);
     return (
       <div>
-        <h1>Prompt</h1>
+        <h1>{this.state.prompt}</h1>
         <input
           type="text"
           value={this.state.text}
           onChange={this.textInputHandler}
+          placeholder="Enter text..."
         />
         <br />
 
@@ -40,12 +42,12 @@ class InputForm extends React.Component {
           <img src={this.state.imagefile} height="300" width="500" />
           <input type="file" onChange={this.fileChangedHandler} />
           <Button className="btn btn-primary" onClick={this.uploadHandler}>
-            Upload
+            Upload Image
           </Button>
         </div>
         <Link to="/">
           {" "}
-          <Button className="btn btn-primary">Submit</Button>
+          <Button className="btn btn-success">Submit</Button>
         </Link>
       </div>
     );
