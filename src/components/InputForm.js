@@ -35,12 +35,15 @@ class InputForm extends React.Component {
           onChange={this.textInputHandler}
           placeholder="Enter text..."
         />
-        <br />
 
         <div>
           {" "}
           <img src={this.state.imagefile} height="300" width="500" />
-          <input type="file" onChange={this.fileChangedHandler} />
+          <input
+            type="file"
+            accept="image/*"
+            onChange={this.fileChangedHandler}
+          />
           <Button className="btn btn-primary" onClick={this.uploadHandler}>
             Upload Image
           </Button>
