@@ -3,12 +3,6 @@ import LoginButton from './LoginButton';
 import { Link } from 'react-router-dom';
 import "../styles/landing.css";
 
-function randomSize(size)
-{
-    var sx = Math.round(Math.random() * size);
-    return sx + "px";
-}
-
 
 const Landing = () => (
   //  {randomSize(10);}

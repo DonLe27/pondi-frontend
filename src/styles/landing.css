@@ -1,5 +1,5 @@
 /*--------------------------------------*\
-	    LANDING-PAGE : normal size;
+	    LANDING-PAGE : medium size;
 \*--------------------------------------*/
 
 body {
@@ -17,13 +17,12 @@ div .PondiCircles {
 	height: 50vw;
 
 	margin: 7.5vw 25vw 25vw 25vw;
-	 
    	
 }
 
 
 
-div .PondiCircles.two{
+  div .PondiCircles.two{
 	-webkit-animation: gentle-move-two 10s infinite alternate ease;
     		animation: gentle-move-two 10s infinite alternate ease;
     		border: .4vw solid #D2E6C1; 
@@ -45,15 +44,6 @@ div .PondiCircles.two{
     		border: .4vw solid #D2E6C1;
    		animation-delay: 1.5s;
    		-webkit-animation-delay: 1.5s;
-   	}
-
-   	div .PondiCircles.five{
-
-   		-webkit-animation: gentle-move 11s infinite alternate ease;
-    		animation: gentle-move 11s infinite alternate ease ease; 
-    		border: .4vw solid #C1D6E5;
-   		animation-delay: 2s;
-   		-webkit-animation-delay: 2s;
    	}
 
 .Landing h1 {

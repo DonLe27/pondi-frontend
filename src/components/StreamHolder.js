@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom'
 import { Link } from 'react-router-dom';
 import { Button, FormGroup, FormControl, ControlLabel, Alert } from "react-bootstrap";
 import { CSSTransitionGroup } from 'react-transition-group'; // ES6
@@ -18,12 +19,15 @@ class StreamHolder extends React.Component{
          
     super(props);
     this.state = {
+        stream: true,
+        archive: false,
+        ocean: false,
         leftSide: <SideBar 
             addStream={this.addStream.bind(this)} 
             addArchive={this.addArchive.bind(this)}
             addOcean={this.addOcean.bind(this)}
             />,
-        rightSide: <Stream />
+        rightSide: <Stream key={0} unmountMe={this.handleChildUnmount} />
     };
     this.handleAdd = this.handleAdd.bind(this);
     this.addStream = this.addStream.bind(this);
@@ -36,30 +40,46 @@ class StreamHolder extends React.Component{
   }
 
   addStream(i){
-    this.setState({rightSide: 0});
-    const right = <Stream key={0}/>;
-    this.setState({rightSide: right});
-
+      if (! this.state.stream)
+    {
+      setTimeout(function(){
+        this.setState({rightSide: <div></div>})
+      }.bind(this), 500);
+      const right = <Stream key={0}/>;
+      setTimeout(function(){
+        this.setState({rightSide: right});
+      }.bind(this), 1000);
+      this.setState({archive: false,stream:true,ocean:false})
+    }
   }
 
   addOcean (i){
-
-    this.setState({rightSide: 0});
-    const right = <Ocean key={1}/>;
-    this.setState({rightSide: right});
-
+    if (! this.state.ocean)
+    {
+      setTimeout(function(){
+        this.setState({rightSide: <div></div>})
+      }.bind(this), 500);
+      const right = <Ocean key={1}/>;
+      setTimeout(function(){
+        this.setState({rightSide: right});
+      }.bind(this), 1000);
+      this.setState({archive: false,stream:false,ocean:true})
+    }
   }
 
   addArchive (i){
-
-    this.setState({rightSide: 0});
-    const right = <Archive key={2}/>;
-    this.setState({rightSide: right});
+    if (! this.state.archive)
+    {
+      setTimeout(function(){
+        this.setState({rightSide: <div></div>})
+      }.bind(this), 500);
+      const right = <Archive key={2}/>;
+      setTimeout(function(){
+        this.setState({rightSide: right});
+      }.bind(this), 1000);
+      this.setState({archive: true,stream:false,ocean:false})
+    }
   }
-
-
- 
-
 
 	render(){
 		
