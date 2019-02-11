@@ -33,18 +33,7 @@
 	border-radius: 50px;
 }
 
-.ProfPic {
-	margin-top: 10vh;
-	margin-bottom: 3vh;
-	box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-	width: calc(40%);
-	border-radius: 50%;
-	border: .4vw solid black;
-	margin-left: calc(30%);
-	height: 12vw;
-}
+
 
 .Button {
 	width: 100%;
@@ -60,4 +49,18 @@
 
 .Button:hover {
 	background: #eeeeee;
+}
+
+.avatar img{
+	margin-top: 10vh;
+	margin-bottom: 3vh;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	width: calc(40%);
+	border-radius: 50%;
+	border: .4vw solid black;
+	margin-left: calc(30%);
+	height: 12vw;
+
 }

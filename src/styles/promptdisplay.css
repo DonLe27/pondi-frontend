@@ -1,0 +1,28 @@
+/*--------------------------------------*\
+	    PROMPT_DISPLAY : medium size;
+\*--------------------------------------*/
+
+.prompt_title {
+	margin: 0;
+	font-family: Barlow, sans-serif;
+	font-size: 2.5vw;
+}
+
+.prompt_contents {
+	font-family: Barlow, sans-serif;
+	font-size: 1.8vw;
+	float: left;
+		color: #b2b2b2;
+
+}
+
+.prompt {
+	padding: 5vw;
+	margin: 5vw;
+	border-bottom: 2px solid black;
+}
+
+.prompt_date {
+	float: right;	color: #b2b2b2;
+
+}

@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
 import { Link } from 'react-router-dom';
-import { Button, FormGroup, FormControl, ControlLabel, Alert } from "react-bootstrap";
 import { CSSTransitionGroup } from 'react-transition-group'; // ES6
 import '../styles/transitions.css';
 import '../styles/streamholder.css';
@@ -48,7 +46,7 @@ class StreamHolder extends React.Component{
       const right = <Stream key={0}/>;
       setTimeout(function(){
         this.setState({rightSide: right});
-      }.bind(this), 1000);
+      }.bind(this), 1100);
       this.setState({archive: false,stream:true,ocean:false})
     }
   }
@@ -62,7 +60,7 @@ class StreamHolder extends React.Component{
       const right = <Ocean key={1}/>;
       setTimeout(function(){
         this.setState({rightSide: right});
-      }.bind(this), 1000);
+      }.bind(this), 1100);
       this.setState({archive: false,stream:false,ocean:true})
     }
   }
@@ -76,7 +74,7 @@ class StreamHolder extends React.Component{
       const right = <Archive key={2}/>;
       setTimeout(function(){
         this.setState({rightSide: right});
-      }.bind(this), 1000);
+      }.bind(this), 1100);
       this.setState({archive: true,stream:false,ocean:false})
     }
   }

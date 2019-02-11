@@ -52,14 +52,7 @@ class Form extends React.Component {
             </form>
             </div>
 
-            // <form onSubmit={this.handleSubmit}>
-               
-             //     <label>
-            //         is water wet?
-            //         <input type="text" value={this.state.value} onChange={this.handleChange} />
-            //     </label>
-            //     <input type="submit" value="start your journal" />
-            // </form>
+           
         );
     }
 }
