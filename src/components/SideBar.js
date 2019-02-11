@@ -11,16 +11,14 @@ class ProfPic extends React.Component
     {
         super(props);
         this.avatar = "https://png2.kisspng.com/sh/d3bd0d6f9b082d62634100512957dcb5/L0KzQYm3VsI2N5JuipH0aYP2gLBuTfRzaahuhtk2bHnxdX7okwQufJJuhOU2c3BxebS0lPhmNZlqfNluaHBqPcTyhgRkcF55h9H9aD3yhcXzif5mNWZnS6JrZna0QbW9UMU5NmY2Tac6MkazQYa5WckzOWY3SaM7MEOxgLBu/kisspng-drawing-line-art-tails-sonic-the-hedgehog-sketch-tooth-outline-5b30bff11d6058.5155126015299215211203.png";
-        this.color = "green";
-        this.pallette = {
-            background: "#00ff55",
-        };
+        
+        this.pallette = "#559955";
     }
 	render()
 	{
 		return (
         <div className="avatar" >
-		<img src={this.avatar} style={this.pallette}/>
+		<img src={this.avatar} style={{'background-color' : this.pallette}}/>
         </div>
 		);
 	}
