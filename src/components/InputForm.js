@@ -29,13 +29,14 @@ class InputForm extends React.Component {
     return (
       <div>
         <h1>{this.state.prompt}</h1>
-        <input
+        <textarea
           type="text"
+          rows="20"
+          cols="80"
           value={this.state.text}
           onChange={this.textInputHandler}
           placeholder="Enter text..."
         />
-
         <div>
           {" "}
           <img src={this.state.imagefile} height="300" width="500" />
