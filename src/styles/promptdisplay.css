@@ -2,27 +2,34 @@
 	    PROMPT_DISPLAY : medium size;
 \*--------------------------------------*/
 
-.prompt_title {
-	margin: 0;
+.prompt .prompt_title {
+	width: 100%;	
+	margin-bottom: -1vw;
 	font-family: Barlow, sans-serif;
-	font-size: 2.5vw;
+	font-size: 2.0vw;
 }
 
-.prompt_contents {
+.prompt .prompt_contents {
 	font-family: Barlow, sans-serif;
-	font-size: 1.8vw;
+	font-size: 1.75vw;
+	width: 80%;
 	float: left;
-		color: #b2b2b2;
-
+	color: #b2b2b2;
+	margin-bottom: 3vw;
 }
 
 .prompt {
-	padding: 5vw;
-	margin: 5vw;
-	border-bottom: 2px solid black;
+	margin: 0 5vw 0 5vw;
+
 }
 
-.prompt_date {
-	float: right;	color: #b2b2b2;
+.prompt hr{
+	width: 100%;
+	color: #C1D6E5;
+	height: 1px;
+	margin-bottom: 3vw;
+}
 
+.prompt .prompt_date {
+	width: 20%; float: right;	color: #b2b2b2;
 }

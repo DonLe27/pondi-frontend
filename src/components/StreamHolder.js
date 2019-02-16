@@ -16,21 +16,27 @@ class StreamHolder extends React.Component{
   constructor(props) {
          
     super(props);
+    // parse through data, get username, etc
+
+    this.streamData = "this is some stream data";
+    this.userData = "this is a username";
     this.state = {
         stream: true,
         archive: false,
         ocean: false,
         leftSide: <SideBar 
+            userData={this.userData} 
             addStream={this.addStream.bind(this)} 
             addArchive={this.addArchive.bind(this)}
             addOcean={this.addOcean.bind(this)}
             />,
-        rightSide: <Stream key={0} unmountMe={this.handleChildUnmount} />
+        rightSide: <Stream key={0} unmountMe={this.handleChildUnmount}  streamData={this.streamData} userData={this.userData}/>
     };
     this.handleAdd = this.handleAdd.bind(this);
     this.addStream = this.addStream.bind(this);
     this.addOcean = this.addStream.bind(this);
     this.addArchive = this.addStream.bind(this);
+
 
   }
 
@@ -43,11 +49,11 @@ class StreamHolder extends React.Component{
       setTimeout(function(){
         this.setState({rightSide: <div></div>})
       }.bind(this), 500);
-      const right = <Stream key={0}/>;
+      const right = <Stream key={0} streamData={this.streamData} userData={this.userData} />;
       setTimeout(function(){
         this.setState({rightSide: right});
       }.bind(this), 1100);
-      this.setState({archive: false,stream:true,ocean:false})
+      this.setState({archive: false, stream:true, ocean:false})
     }
   }
 
@@ -57,7 +63,7 @@ class StreamHolder extends React.Component{
       setTimeout(function(){
         this.setState({rightSide: <div></div>})
       }.bind(this), 500);
-      const right = <Ocean key={1}/>;
+      const right = <Ocean key={1} streamData={this.streamData} userData={this.userData}/>;
       setTimeout(function(){
         this.setState({rightSide: right});
       }.bind(this), 1100);
@@ -71,7 +77,7 @@ class StreamHolder extends React.Component{
       setTimeout(function(){
         this.setState({rightSide: <div></div>})
       }.bind(this), 500);
-      const right = <Archive key={2}/>;
+      const right = <Archive key={2} streamData={this.streamData} userData={this.userData}/>;
       setTimeout(function(){
         this.setState({rightSide: right});
       }.bind(this), 1100);
@@ -81,8 +87,6 @@ class StreamHolder extends React.Component{
 
 	render(){
 		
-    ;
-
 		return (
 		<div key={this.state.rightSide}>
         <CSSTransitionGroup

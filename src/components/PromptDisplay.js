@@ -9,17 +9,19 @@ class PromptDisplay extends React.Component {
 	{
 		super(props);
 		this.prompt_title = "This is a template title";
-		this.prompt_contents = "These are some template contents";
-		this.prompt_date = "1/1/1111"
+		this.prompt_contents = "This is some template content";
+		this.prompt_date = "Jan 11, 1111";
 	}
 
 	render(){
 		return(
-			<section className="prompt">
+			<div className="prompt">
 			<h1 className="prompt_title">{this.prompt_title}</h1>
 			<p className="prompt_contents">{this.prompt_contents}</p>
 			<p className="prompt_date">{this.prompt_date}</p>
-			</section>
+			<hr/>
+			</div>
+
 		);
 	}
 }

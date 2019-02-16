@@ -19,18 +19,27 @@
 
 
 .Username {
-	margin-bottom: 25vh;
+	margin-bottom: 35vh;
 
 	text-align: center;
-	height: 4vh;
+	height: 5vh;
 	width: calc(80%);
 
 	font-size: 2vh;
 	padding: none;	
 	margin-left: calc(10%); 
+	padding-bottom: 1vh;
 	padding-top: 1vh;
-	border: 1px solid grey;
+
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	border: 2px solid rgba(255,255,255,.0);
 	border-radius: 50px;
+
+	background: radial-gradient(40vw at 51.82% 100%, rgba(109, 143, 167, 0.6) 0%, rgba(226, 234, 241, 0.6) 100%);
+
+	color: white;
 }
 
 
@@ -45,22 +54,51 @@
 	background: none;
 	border: none;
 	font-family: Barlow, sans-serif;
+	position: relative;
+	z-index: 20;
 }
 
 .Button:hover {
-	background: #eeeeee;
+	background: #bbccdd;
 }
 
-.avatar img{
-	margin-top: 10vh;
-	margin-bottom: 3vh;
-	box-sizing: border-box;
+.avatar {
+		margin-top: 10vh;
+			margin-bottom: 3vh;
+box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
 	width: calc(40%);
 	border-radius: 50%;
-	border: .4vw solid black;
+	border: 1vw solid #98AABB;
+	border-style: double;
 	margin-left: calc(30%);
 	height: 12vw;
+}
 
+.avatar img{
+box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	width: calc(100%);
+	height: calc(100%);
+	border-radius: 50%;
+}
+
+.sidebar-vector1 {
+width: 30%;
+height: 50vh;
+position: absolute;
+bottom: 0px;
+left: 0px;
+z-index: 0;
+}
+
+.sidebar-vector2 {
+width: 30%;
+height: 50vh;
+position: absolute;
+bottom: 0px;
+left: 0px;
+z-index: 0;
 }

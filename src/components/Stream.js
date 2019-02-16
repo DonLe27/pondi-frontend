@@ -7,12 +7,23 @@ import '../styles/transitions.css';
 import '../styles/stream.css';
 
 
-const Stream = () => (
-	<div className="Stream">
-	<PromptDisplay />
-	</div>
-)
+class Stream extends React.Component{
+	constructor(props){
+		super(props);
+		// parse data from parent to get prompts
+		this.prompts = [ <PromptDisplay title={0} content={0} />, <PromptDisplay /> ]
+	}
 
+	render() {
+		return (
+		
+		<div className="Stream">
+		
+		{this.prompts}
+		</div>
+		);
+	}
+}
 
 
 export default Stream
