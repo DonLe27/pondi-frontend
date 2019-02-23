@@ -24,7 +24,13 @@
 	line-height: normal;
 	font-size: 2vw;
 
+	cursor: pointer;
+
     color: #98AABB;
+}
+
+.category:hover {
+	background-color: rgba(200,200,200,.5);
 }
 
 .category-holder {

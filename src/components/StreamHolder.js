@@ -18,14 +18,63 @@ class StreamHolder extends React.Component{
     super(props);
     // parse through data, get username, etc
 
-    this.streamData = "this is some stream data";
-    this.userData = "this is a username";
+    this.userData = {
+      "username" : "this is a username",
+      "avatar" : "/hedgehog-clipart-black-and-white-1.png",
+      "prompts" : [
+                  {
+                    "title": "This is the first title, from archive",
+                    "content": "this is some content. This is some more contnet. This is more content",
+                    "date": "Jan 1, 1111",
+                    "avatar": "/hedgehog-clipart-black-and-white-1.png"
+                  },
+                  {
+                    "title": "This is the second title, from archive",
+                    "content": "this is some more content. Lorem ipsum something dolor blah",
+                    "date": "Jan 1, 1111",
+                    "avatar": "/hedgehog-clipart-black-and-white-1.png"
+                  },
+              ]
+    };
+
+     this.streamData = {
+      "username" : "this is a username",
+      "avatar" : "/hedgehog-clipart-black-and-white-1.png",
+      "prompts" : [
+                  {
+                    "title": "This is the first title for stream",
+                    "content": "this is some content. This is some more contnet. This is more content",
+                    "date": "Jan 1, 1111",
+                    "avatar": "/hedgehog-clipart-black-and-white-1.png"
+                  },
+                  {
+                    "title": "This is the first title for stream",
+                    "content": "this is some content. This is some more contnet. This is more content",
+                    "date": "Jan 1, 1111",
+                    "avatar": "/hedgehog-clipart-black-and-white-1.png"
+                  },
+                  {
+                    "title": "This is the first title for stream",
+                    "content": "this is some content. This is some more contnet. This is more content",
+                    "date": "Jan 1, 1111",
+                    "avatar": "/hedgehog-clipart-black-and-white-1.png"
+                  },
+                  {
+                    "title": "This is the second title for stream",
+                    "content": "this is some more content. Lorem ipsum something dolor blah",
+                    "date": "Jan 1, 1111",
+                    "avatar": "/hedgehog-clipart-black-and-white-1.png"
+                  },
+              ]
+    }
+
+
     this.state = {
         stream: true,
         archive: false,
         ocean: false,
         leftSide: <SideBar 
-            userData={this.userData} 
+            userData={this.userData}
             addStream={this.addStream.bind(this)} 
             addArchive={this.addArchive.bind(this)}
             addOcean={this.addOcean.bind(this)}
@@ -49,7 +98,7 @@ class StreamHolder extends React.Component{
       setTimeout(function(){
         this.setState({rightSide: <div></div>})
       }.bind(this), 500);
-      const right = <Stream key={0} streamData={this.streamData} userData={this.userData} />;
+      const right = <Stream key={0} streamData={this.streamData} userData={this.userData}/>;
       setTimeout(function(){
         this.setState({rightSide: right});
       }.bind(this), 1100);

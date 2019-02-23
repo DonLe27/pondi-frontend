@@ -10,7 +10,14 @@ class Archive extends React.Component{
 	constructor(props){
 		super(props);
 		// parse data from parent to get prompts
-		this.prompts = [ <PromptDisplay title={0} content={0} />, <PromptDisplay /> ]
+		this.avatar=this.props.userData["avatar"];
+		this.prompts = [];
+		for (var i = 0; i < this.props.userData["prompts"].length; i++){
+			var p = this.props.userData["prompts"][i];
+			this.prompts.push(
+					<PromptDisplay title={p["title"]} content={p["content"]} date={p["date"]} avatar={p["avatar"]}/>
+					);
+		}
 	}
 
 	render() {

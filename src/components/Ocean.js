@@ -6,8 +6,14 @@ import '../styles/ocean.css';
 
 
 
-const Ocean = () => (
-	<div className="Ocean">This is an Ocean</div>
-)
+class Ocean extends React.Component {
+	
+
+	render() {
+		return (	
+			<div className="Ocean">This is an Ocean</div>
+		);
+	}	
+} 
 
 export default Ocean

@@ -7,9 +7,8 @@ import "../styles/landing.css";
 const Landing = () => (
   //  {randomSize(10);}
   <div className="Landing">
-	<link href="../styles/landing.css" rel="stylesheet"></link>
 
-    <LoginButton className="LoginButton"/>
+    <LoginButton className="LoginButton login-landing"/>
     <div className="PondiCircles one"></div>
     <div className="PondiCircles two" ></div>
     <div className="PondiCircles three" ></div>
@@ -23,7 +22,7 @@ const Landing = () => (
 class Form extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {value: ''};
+        this.state = {value: 'Respond here...'};
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -40,14 +39,14 @@ class Form extends React.Component {
     
     render() {
         return (
-            <div className="form-group">
+            <div className="form-group LandingForm">
             <form onSubmit={this.handleSubmit}>
                 <label>
-                     is water wet?
-                     <input type="text" value={this.state.value} onChange={this.handleChange} />
+                     Is water wet?
+                     <textarea type="text" value={this.state.value} onChange={this.handleChange} />
                 </label>
                 <Link to='/register'>
-                    <button className="btn btn-primary">start your journal</button>
+                    <button className="btn btn-primary">Register</button>
                 </Link>
             </form>
             </div>
