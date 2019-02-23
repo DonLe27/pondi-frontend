@@ -22,7 +22,7 @@ const Landing = () => (
 class Form extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {value: 'Respond here...'};
+        this.state = {value: ''};
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -43,7 +43,7 @@ class Form extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <label>
                      Is water wet?
-                     <textarea type="text" value={this.state.value} onChange={this.handleChange} />
+                     <textarea type="text" value={this.state.value} onChange={this.handleChange} placeholder="Respond Here..." />
                 </label>
                 <Link to='/register'>
                     <button className="btn btn-primary">Register</button>

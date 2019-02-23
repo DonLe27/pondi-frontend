@@ -2,13 +2,15 @@ import React from 'react'
 import LoginButton from './LoginButton';
 import { Button, FormGroup, FormControl, ControlLabel, Alert } from "react-bootstrap";
 import { Link } from 'react-router-dom';
+import '../styles/register.css'
 
 const Register = () => (
   <div>
     <LoginButton />
-    <h1>sign up for pondi</h1>
-    <RegisterForm />
-    <LoginLink />
+    <h1>Registration</h1>
+    <div className="Register" >
+        <RegisterForm className="RegisterForm" />
+    </div>
   </div>
 )
 

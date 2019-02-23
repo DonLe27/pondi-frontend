@@ -24,7 +24,7 @@ class StreamHolder extends React.Component{
       "prompts" : [
                   {
                     "title": "This is the first title, from archive",
-                    "content": "this is some content. This is some more contnet. This is more content",
+                    "content": "this is some content. This is some more content. This is more content",
                     "date": "Jan 1, 1111",
                     "avatar": "/hedgehog-clipart-black-and-white-1.png"
                   },
@@ -38,8 +38,6 @@ class StreamHolder extends React.Component{
     };
 
      this.streamData = {
-      "username" : "this is a username",
-      "avatar" : "/hedgehog-clipart-black-and-white-1.png",
       "prompts" : [
                   {
                     "title": "This is the first title for stream",
