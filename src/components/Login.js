@@ -5,21 +5,25 @@ import "../styles/login.css";
 
 
 const Login = () => (
+
+
+	<div>
+	<h1 className="Login-H1">Login</h1>
 	<div className="Login">
-	<h1>Log in to Pondi</h1>
-	<LoginForm/>
-	<RegisterButton />
+	<LoginForm  />
+	<RegisterButton/>
+	</div>
 	</div>
 )
 
 const RegisterButton = () => (
-    <div>
+    <div className="RegisterButton">
         <div>New to Pondi?</div>
-        <Link to='/register'>Sign up now!</Link>
+        <Link to='/register' >Sign up now!</Link>
     </div>
 )
 
-
+/*
 const checkRender = (num) => {
 	if(num < 7)
 		return (
@@ -28,7 +32,7 @@ const checkRender = (num) => {
         </Alert>    
 	); 	
 }
-
+*/
 class LoginForm extends React.Component {
 	state = {
 		toProfile: false,
@@ -69,12 +73,15 @@ class LoginForm extends React.Component {
 					
 		}
 
+		        document.body.style = 'background: #D6E4EE;';
+
+
 		return (
 				<form onSubmit={this.handleSubmit}>
 
 				<FormGroup controlId="email" bsSize="large">
-					<ControlLabel bsClass="LoginForm">Email</ControlLabel>
-					<FormControl 
+                	<FormControl className="login-wide"
+					placeholder="email" 
 					autoFocus 
 					type="email" 
 					value={this.state.email} 
@@ -83,8 +90,8 @@ class LoginForm extends React.Component {
 				</FormGroup>
 
 				<FormGroup controlId="password" bsSize="large" >
-            		<ControlLabel>Password</ControlLabel>
-                	<FormControl
+                	<FormControl className="login-wide"
+                	placeholder="password"
                 	autoFocus
                 	type="password"
                 	value={this.state.password}
@@ -92,10 +99,9 @@ class LoginForm extends React.Component {
                 	/>
             	</FormGroup>
 
-            	{checkRender(this.state.password.length)}
             		
 
-			<Button
+			<Button className="login-button"
                 block
                 bsSize="large"
                 disabled={!this.validateForm()}
