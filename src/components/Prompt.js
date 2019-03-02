@@ -32,6 +32,7 @@ class Prompt extends React.Component {
         <div>{this.state.prompt}</div>
 
         <textarea
+          className="Input"
           type="text"
           rows="20"
           cols="80"
