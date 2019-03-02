@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FormControl, InputGroup, Button } from "react-bootstrap";
+import "../styles/prompt.css";
 
 class Prompt extends React.Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class Prompt extends React.Component {
   render() {
     console.log(this.state.text);
     return (
-      <div>
+      <div className="Prompt">
         <div>{this.state.prompt}</div>
 
         <textarea
