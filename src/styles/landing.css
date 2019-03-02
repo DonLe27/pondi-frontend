@@ -17,7 +17,8 @@ div .PondiCircles {
 	height: 50vw;
 
 	margin: 7.5vw 25vw 25vw 25vw;
-   	
+
+
 }
 
 
@@ -47,6 +48,8 @@ div .PondiCircles {
    	}
 
 .Landing h1 {
+    cursor: default;
+
 	position: absolute;
 	
 	width: 50vw;

@@ -7,7 +7,7 @@ import '../styles/register.css'
 const Register = () => (
   <div>
     <LoginButton />
-    <h1>Registration</h1>
+    <h1 className="Register-H1">Registration</h1>
     <div className="Register" >
         <RegisterForm className="RegisterForm" />
     </div>
@@ -25,7 +25,8 @@ class RegisterForm extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        name: "",
+        firstName: "",
+        lastName: "",
         username: "",
         email: "",
         password: "",
@@ -39,11 +40,12 @@ class RegisterForm extends React.Component {
     }
 
     validateForm() {
-        return this.state.name.length > 0 
+        return this.state.firstName.length > 0
+        && this.state.lastName.length > 0  
         && this.state.username.length > 0
         && this.state.email.length > 0
-        && this.state.password.length > 0
-        && this.state.repeated_password.length > 0;
+        && this.state.password.length > 0;
+        //&& this.state.repeated_password.length > 0;
     }
   
     handleChange(event) {
@@ -69,31 +71,42 @@ class RegisterForm extends React.Component {
     }
   
     render() {
+        document.body.style = 'background: #D6E4EE;';
+
       return (
         <form onSubmit={this.handleSubmit}>
-            <FormGroup controlId="name" bsSize="large">
-            <ControlLabel>Name</ControlLabel>
-                <FormControl
+            <FormGroup controlId="firstName" bsSize="large">
+                <FormControl className="register-fname"
                 autoFocus
                 type="text"
-                value={this.state.name}
+                placeholder="first name"
+                value={this.state.firstName}
+                onChange={this.handleChange}
+                />
+            </FormGroup>
+            <FormGroup controlId="lastName" bsSize="large">
+                <FormControl className="register-lname"
+                autoFocus
+                type="text"
+                placeholder="last name"
+                value={this.state.lastName}
                 onChange={this.handleChange}
                 />
             </FormGroup>
 
             <FormGroup controlId="username" bsSize="large">
-            <ControlLabel>Username</ControlLabel>
-                <FormControl
+                <FormControl className="register-wide"
                 autoFocus
                 type="text"
+                placeholder="username"
                 value={this.state.username}
                 onChange={this.handleChange}
                 />
             </FormGroup>
 
             <FormGroup controlId="email" bsSize="large">
-            <ControlLabel>Email</ControlLabel>
-                <FormControl
+                <FormControl className="register-wide"
+                placeholder="email"
                 autoFocus
                 type="email"
                 value={this.state.email}
@@ -102,8 +115,8 @@ class RegisterForm extends React.Component {
             </FormGroup>
 
             <FormGroup controlId="password" bsSize="large">
-            <ControlLabel>Password</ControlLabel>
-                <FormControl
+                <FormControl className="register-wide"
+                placeholder="password"
                 autoFocus
                 type="password"
                 value={this.state.password}
@@ -111,12 +124,12 @@ class RegisterForm extends React.Component {
                 />
             </FormGroup>
 
-            <Button
+            <Button className="register-button"
                 block
                 bsSize="large"
                 disabled={!this.validateForm()}
                 type="submit"
-            >Sign Up
+            >next
             </Button>
         </form>
       );
