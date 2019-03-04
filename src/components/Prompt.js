@@ -27,7 +27,7 @@ class Prompt extends React.Component {
   };
 
   render() {
-    console.log(this.state.imagefile);
+    console.log(this.state.text);
     return (
       <div>
         <div className="Prompt">{this.state.prompt}</div>
@@ -35,6 +35,11 @@ class Prompt extends React.Component {
           type="image"
           className="Refresh"
           src="http://www.stickpng.com/assets/images/585e4831cb11b227491c338e.png"
+        />
+        <input
+          type="image"
+          className="Edit"
+          src="https://www.pngkey.com/png/full/0-5198_edit-pencil-png-pencil-edit-logo.png"
         />
         <div className="Container">
           <textarea
@@ -52,6 +57,12 @@ class Prompt extends React.Component {
           <label for="file" className="Upload">
             <img src="https://images.vexels.com/media/users/3/153834/isolated/preview/d0679e2704e98a8041508fba4c332d49-paper-clip-stroke-icon-by-vexels.png" />
           </label>
+          <input
+            type="image"
+            className="Visibility"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Globe_icon.svg/768px-Globe_icon.svg.png"
+          />
+          <Button className="Categories">#CATEGORIES</Button>
         </div>
 
         <Link to="/">

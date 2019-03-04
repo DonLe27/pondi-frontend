@@ -3,13 +3,11 @@
   left: 37vw;
   top: 5vh;
   right: 15vw;
-  font-size: 22px;
+  width: 50vw;
+  height: 10vh;
+  font-size: 3vh;
   font-family: Barlow;
-}
-
-.Input {
-  box-sizing: border-box;
-  border-radius: 12px;
+  overflow: auto;
 }
 
 .Container {
@@ -20,10 +18,9 @@
   top: 15vh;
   width: 55vw;
   height: 70vh;
-  padding-left: 38px;
+  padding-left: 2vw;
   padding-right: 5px;
-
-  padding-top: 32px;
+  padding-top: 3vh;
   background-color: #ffffff;
 }
 
@@ -34,16 +31,32 @@
   bottom: 3vh;
   border: 2px solid #d7e2ea;
   border-radius: 50px;
-  width: 100px;
-  height: 40px;
-  font-size: 22px;
+  width: 7vw;
+  height: 5vh;
+  font-size: 3vh;
   font-family: Barlow;
+}
+
+.Categories {
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  font-family: Barlow;
+  font-size: 2vh;
+  bottom: 2vh;
+  left: 1vw;
+}
+
+.Visibility {
+  position: absolute;
+  right: 1vw;
+  bottom: 1.5vh;
 }
 
 .Upload {
   position: absolute;
   cursor: pointer;
-  right: 1vh;
+  right: 3vw;
   bottom: 1vh;
 }
 
@@ -58,9 +71,9 @@
 
 textarea {
   width: 53vw;
-  height: 65vh;
+  height: 63vh;
   resize: none;
-  font-size: 18px;
+  font-size: 2.5vh;
   font-family: "Barlow";
   color: #b2b2b2;
   border: none;
@@ -68,17 +81,27 @@ textarea {
 }
 
 img {
-  width: 20px;
-  height: 20px;
+  width: 1.5vw;
+  height: 3vh;
 }
 
 input {
-  width: 30px;
-  height: 30px;
+  width: 1.5vw;
+  height: 3vh;
+}
+
+button {
+  color: #b2b2b2;
 }
 
 .Refresh {
   position: absolute;
   top: 7vh;
   right: 7vw;
+}
+
+.Edit {
+  position: absolute;
+  top: 7vh;
+  right: 10vw;
 }
