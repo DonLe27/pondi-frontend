@@ -71,7 +71,6 @@ class RegisterForm extends React.Component {
     }
   
     render() {
-        document.body.style = 'background: #D6E4EE;';
 
       return (
         <form onSubmit={this.handleSubmit}>
