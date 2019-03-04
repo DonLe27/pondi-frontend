@@ -2,6 +2,7 @@
   position: absolute;
   left: 37vw;
   top: 5vh;
+  right: 15vw;
   font-size: 22px;
   font-family: Barlow;
 }
@@ -16,7 +17,7 @@
   border: 2px solid #d7e2ea;
   border-radius: 12px;
   left: 35vw;
-  top: 10vh;
+  top: 15vh;
   width: 55vw;
   height: 70vh;
   padding-left: 38px;
@@ -30,7 +31,7 @@
   position: absolute;
   cursor: pointer;
   right: 7vw;
-  bottom: 8vh;
+  bottom: 3vh;
   border: 2px solid #d7e2ea;
   border-radius: 50px;
   width: 100px;
@@ -69,4 +70,15 @@ textarea {
 img {
   width: 20px;
   height: 20px;
+}
+
+input {
+  width: 30px;
+  height: 30px;
+}
+
+.Refresh {
+  position: absolute;
+  top: 7vh;
+  right: 7vw;
 }

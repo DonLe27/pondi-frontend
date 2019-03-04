@@ -9,7 +9,8 @@ class Prompt extends React.Component {
     this.state = {
       imagefile: null,
       text: "",
-      prompt: "Prompt"
+      prompt:
+        "This is where the prompt goes; I imagine most of them to be pretty short but just in case it is long this is what it would look like yeehaw"
     };
   }
 
@@ -30,7 +31,11 @@ class Prompt extends React.Component {
     return (
       <div>
         <div className="Prompt">{this.state.prompt}</div>
-
+        <input
+          type="image"
+          className="Refresh"
+          src="http://www.stickpng.com/assets/images/585e4831cb11b227491c338e.png"
+        />
         <div className="Container">
           <textarea
             type="text"
