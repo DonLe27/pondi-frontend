@@ -26,10 +26,33 @@
   background-color: #ffffff;
 }
 
-.Submit {
+.Post {
   position: absolute;
-  right: 8vw;
-  bottom: 10vh;
+  cursor: pointer;
+  right: 7vw;
+  bottom: 8vh;
+  border: 2px solid #d7e2ea;
+  border-radius: 50px;
+  width: 100px;
+  height: 40px;
+  font-size: 22px;
+  font-family: Barlow;
+}
+
+.Upload {
+  position: absolute;
+  cursor: pointer;
+  right: 1vh;
+  bottom: 1vh;
+}
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
 }
 
 textarea {
@@ -40,5 +63,10 @@ textarea {
   font-family: "Barlow";
   color: #b2b2b2;
   border: none;
-  outline: none;
+  /*outline: none;*/
+}
+
+img {
+  width: 20px;
+  height: 20px;
 }

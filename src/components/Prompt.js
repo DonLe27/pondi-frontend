@@ -21,12 +21,12 @@ class Prompt extends React.Component {
     this.setState({ text: event.target.value });
   };
 
-  uploadHandler = () => {
-    console.log(this.state.imagefile);
+  uploadHandler = event => {
+    this.setState({ imagefile: event.target.value });
   };
 
   render() {
-    console.log(this.state.text);
+    console.log(this.state.imagefile);
     return (
       <div>
         <div className="Prompt">{this.state.prompt}</div>
@@ -38,24 +38,21 @@ class Prompt extends React.Component {
             onChange={this.textInputHandler}
             placeholder="Type your response here"
           />
-        </div>
-        <Link to="/">
-          {" "}
-          <Button className="Submit">Submit</Button>
-        </Link>
-
-        <div>
-          {" "}
-          <img src={this.state.imagefile} height="300" width="500" />
           <input
             type="file"
-            accept="image/*"
-            onChange={this.fileChangedHandler}
+            id="file"
+            className="inputfile"
+            onClick={this.uploadHandler}
           />
-          <Button className="btn btn-primary" onClick={this.uploadHandler}>
-            Upload Image
-          </Button>
+          <label for="file" className="Upload">
+            <img src="https://images.vexels.com/media/users/3/153834/isolated/preview/d0679e2704e98a8041508fba4c332d49-paper-clip-stroke-icon-by-vexels.png" />
+          </label>
         </div>
+
+        <Link to="/">
+          {" "}
+          <Button className="Post">Post</Button>
+        </Link>
       </div>
     );
   }
