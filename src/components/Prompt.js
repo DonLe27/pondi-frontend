@@ -28,18 +28,22 @@ class Prompt extends React.Component {
   render() {
     console.log(this.state.text);
     return (
-      <div className="Prompt">
-        <div>{this.state.prompt}</div>
+      <div>
+        <div className="Prompt">{this.state.prompt}</div>
 
-        <textarea
-          className="Input"
-          type="text"
-          rows="20"
-          cols="80"
-          value={this.state.text}
-          onChange={this.textInputHandler}
-          placeholder="Enter text..."
-        />
+        <div className="Container">
+          <textarea
+            type="text"
+            value={this.state.text}
+            onChange={this.textInputHandler}
+            placeholder="Type your response here"
+          />
+        </div>
+        <Link to="/">
+          {" "}
+          <Button className="Submit">Submit</Button>
+        </Link>
+
         <div>
           {" "}
           <img src={this.state.imagefile} height="300" width="500" />
@@ -52,10 +56,6 @@ class Prompt extends React.Component {
             Upload Image
           </Button>
         </div>
-        <Link to="/">
-          {" "}
-          <Button className="btn btn-success">Submit</Button>
-        </Link>
       </div>
     );
   }

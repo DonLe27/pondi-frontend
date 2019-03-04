@@ -1,13 +1,44 @@
 .Prompt {
+  position: absolute;
+  left: 37vw;
+  top: 5vh;
+  font-size: 22px;
+  font-family: Barlow;
 }
 
 .Input {
-  width: 829px;
-  height: 589px;
-  border: 2px solid #d7e2ea;
   box-sizing: border-box;
   border-radius: 12px;
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+}
+
+.Container {
+  position: absolute;
+  border: 2px solid #d7e2ea;
+  border-radius: 12px;
+  left: 35vw;
+  top: 10vh;
+  width: 55vw;
+  height: 70vh;
+  padding-left: 38px;
+  padding-right: 5px;
+
+  padding-top: 32px;
+  background-color: #ffffff;
+}
+
+.Submit {
+  position: absolute;
+  right: 8vw;
+  bottom: 10vh;
+}
+
+textarea {
+  width: 53vw;
+  height: 65vh;
+  resize: none;
+  font-size: 18px;
+  font-family: "Barlow";
+  color: #b2b2b2;
+  border: none;
+  outline: none;
 }
