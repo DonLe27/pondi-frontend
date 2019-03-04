@@ -2,6 +2,8 @@
 }
 
 .Input {
+  width: 829px;
+  height: 589px;
   border: 2px solid #d7e2ea;
   box-sizing: border-box;
   border-radius: 12px;
