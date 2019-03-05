@@ -1,10 +1,10 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import LoginButton from './LoginButton';
 import { Button, FormGroup, FormControl, ControlLabel, Alert } from "react-bootstrap";
-import {Link, Redirect} from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import '../styles/register.css'
-import {connect} from "react-redux";
-import {auth} from "../actions";
+import { connect } from "react-redux";
+import { auth } from "../actions";
 
 // const Register = () => (
 //   <div>
@@ -24,68 +24,82 @@ import {auth} from "../actions";
 // )
 
 class Register extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      firstName: "",
-      lastName: "",
-      username: "",
-      email: "",
-      password: "",
-      show_error: false,
-      error_message: ""
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            firstName: "",
+            lastName: "",
+            username: "",
+            email: "",
+            password: "",
+            show_error: false,
+            error_message: "",
+            avatar: "",
+            color: ""
+        };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.validateForm = this.validateForm.bind(this);
-  }
 
-  validateForm() {
-    return this.state.firstName.length > 0
-    && this.state.lastName.length > 0  
-    && this.state.username.length > 0
-    && this.state.email.length > 0
-    && this.state.password.length > 0;
-    //&& this.state.repeated_password.length > 0;
-  }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.validateForm = this.validateForm.bind(this);
 
-  handleChange(event) {
-    this.setState({
-      [event.target.id]: event.target.value
-    });
-  }
 
-  handleSubmit(event) {
-      // if (this.state.password !== this.state.repeated_password) {
-      //     this.state.show_error = true;
-      //     this.state.error_message = "Passwords do not match.";
-      // }
-      event.preventDefault();
-      this.props.register(
-        this.state.username, 
-        this.state.password, 
-        this.state.firstName,
-        this.state.lastName,
-        this.state.email,
-      );
-  }
+    }
 
-  showAlert(event) {
-      return (
-          <Alert bsStyle="danger">
+    validateForm() {
+        return this.state.firstName.length > 0 &&
+            this.state.lastName.length > 0 &&
+            this.state.username.length > 0 &&
+            this.state.email.length > 0 &&
+            this.state.password.length > 0;
+        //&& this.state.repeated_password.length > 0;
+    }
+
+    handleChange(event) {
+        this.setState({
+            [event.target.id]: event.target.value
+        });
+    }
+
+    handleSubmit(event) {
+        // if (this.state.password !== this.state.repeated_password) {
+        //     this.state.show_error = true;
+        //     this.state.error_message = "Passwords do not match.";
+        // }
+        event.preventDefault();
+        this.props.register(
+            this.state.username,
+            this.state.password,
+            this.state.firstName,
+            this.state.lastName,
+            this.state.email,
+        );
+    }
+
+    showAlert(event) {
+        return (
+            <Alert bsStyle="danger">
             <p>{this.props.error_message}</p>
           </Alert>
-      );
-  }
-
-  render() {
-    document.body.style = 'background: #D6E4EE;';
-    if (this.props.isAuthenticated) {
-      return <Redirect to="/home" />
+        );
     }
-  return (
-    <div>
+
+
+    componentDidMount() {
+        document.body.style.backgroundColor = "#D6E4EE";
+    }
+
+    componentWillUnmount() {
+        document.body.style.backgroundColor = null;
+    }
+
+    render() {
+        if (this.props.isAuthenticated) {
+            return <Redirect to="/home" />
+        }
+
+        return (
+            <div>
       <LoginButton />
       <h1 className="Register-H1">Registration</h1>
     <div className="Register" >    
@@ -139,6 +153,37 @@ class Register extends Component {
             />
         </FormGroup>
 
+        <hr />
+
+        <p className="register-wide-label"> Choose your Spirit Animal </p>
+
+
+       <Button className="avatar-button" onClick={() => (this.setState({avatar: "crab"}))}><img src={process.env.PUBLIC_URL + "crab.png"} /></Button>
+       <Button className="avatar-button" onClick={() => (this.setState({avatar: "kangaroo"}))}><img src={process.env.PUBLIC_URL + "crab.png"} /></Button>
+       <Button className="avatar-button" onClick={() => (this.setState({avatar: "shrimp"}))}><img src={process.env.PUBLIC_URL + "crab.png"} /></Button>
+       <Button className="avatar-button" onClick={() => (this.setState({avatar: "turtle"}))}><img src={process.env.PUBLIC_URL + "crab.png"} /></Button>
+       <Button className="avatar-button" onClick={() => (this.setState({avatar: "snake"}))}><img src={process.env.PUBLIC_URL + "crab.png"} /></Button>
+       <Button className="avatar-button" onClick={() => (this.setState({avatar: "squirrel"}))}><img src={process.env.PUBLIC_URL + "crab.png"} /></Button>
+       <Button className="avatar-button" onClick={() => (this.setState({avatar: "stingray"}))}><img src={process.env.PUBLIC_URL + "crab.png"} /></Button>
+       <Button className="avatar-button" onClick={() => (this.setState({avatar: "hedgehog"}))}><img src={process.env.PUBLIC_URL + "crab.png"} /></Button>
+
+       <p className="register-wide-label">{this.state.avatar}</p>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
+
+        <hr />
+
+        <p className="register-wide-label"> Choose a Color </p>
+
+       <Button className="color-button" onClick={() => (this.setState({color: "#7F91A8"}))}></Button>
+        <Button className="color-button" onClick={() => (this.setState({color: "#BFD9A9"}))}></Button>
+        <Button className="color-button" onClick={() => (this.setState({color: "#9895C1"}))}></Button>
+       <Button className="color-button" onClick={() => (this.setState({color: "#A0A0A0"}))}></Button>
+       <Button className="color-button" onClick={() => (this.setState({color: "#7AA1A4"}))}></Button>
+       <Button className="color-button" onClick={() => (this.setState({color: "#EBD08C"}))}></Button>
+       <Button className="color-button" onClick={() => (this.setState({color: "#ECA586"}))}></Button>
+       <Button className="color-button" onClick={() => (this.setState({color: "#DC8282"}))}></Button>
+
         <Button className="register-button"
             block
             bsSize="large"
@@ -149,27 +194,27 @@ class Register extends Component {
     </form>
     </div>
     </div>
-    );
-  }
+        );
+    }
 }
 
 const mapStateToProps = state => {
-  let errors = [];
-  if (state.auth.errors) {
-    errors = Object.keys(state.auth.errors).map(field => {
-      return {field, message: state.auth.errors[field]};
-    });
-  }
-  return {
-    errors,
-    isAuthenticated: state.auth.isAuthenticated
-  };
+    let errors = [];
+    if (state.auth.errors) {
+        errors = Object.keys(state.auth.errors).map(field => {
+            return { field, message: state.auth.errors[field] };
+        });
+    }
+    return {
+        errors,
+        isAuthenticated: state.auth.isAuthenticated
+    };
 }
 
 const mapDispatchToProps = dispatch => {
-  return {
-    register: (username, password) => dispatch(auth.register(username, password)),
-  };
+    return {
+        register: (username, password) => dispatch(auth.register(username, password)),
+    };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register);
