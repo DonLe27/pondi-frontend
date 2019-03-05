@@ -191,7 +191,7 @@ class StreamHolder extends React.Component {
         }.bind(this),
         100
       );
-      const right = <Prompt key={3} />;
+      const right = <Prompt key={3} streamData={this.streamData} />;
       setTimeout(
         function() {
           this.setState({ rightSide: right });
