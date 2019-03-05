@@ -14,19 +14,18 @@ class Prompt extends React.Component {
   }
 
   fileChangedHandler = event => {
-    this.setState({ imagefile: URL.createObjectURL(event.target.files[0]) });
+    this.setState({ imagefile: event.target.files[0] });
   };
 
   textInputHandler = event => {
     this.setState({ text: event.target.value });
   };
 
-  uploadHandler = event => {
-    this.setState({ imagefile: event.target.value });
+  uploadHandler = () => {
+    console.log(this.state.imagefile);
   };
 
   render() {
-    console.log(this.state.text);
     return (
       <div>
         <div className="Prompt">{this.state.prompt}</div>
@@ -51,7 +50,8 @@ class Prompt extends React.Component {
             type="file"
             id="file"
             className="inputfile"
-            onClick={this.uploadHandler}
+            accept="image/*"
+            onChange={this.fileChangedHandler}
           />
           <label for="file" className="Upload">
             <img src="https://images.vexels.com/media/users/3/153834/isolated/preview/d0679e2704e98a8041508fba4c332d49-paper-clip-stroke-icon-by-vexels.png" />
@@ -64,10 +64,9 @@ class Prompt extends React.Component {
           <Button className="Categories">#CATEGORIES</Button>
         </div>
 
-        <Link to="/">
-          {" "}
-          <Button className="Post">Post</Button>
-        </Link>
+        <Button className="Post" onClick={this.uploadHandler}>
+          Post
+        </Button>
       </div>
     );
   }
