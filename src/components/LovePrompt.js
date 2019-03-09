@@ -15,6 +15,9 @@ class LovePrompt extends React.Component {
   }
 
   fileChangedHandler = event => {
+    if (!event.target.files[0]) {
+      return;
+    }
     this.setState({ imagefile: URL.createObjectURL(event.target.files[0]) });
   };
 
