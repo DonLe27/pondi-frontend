@@ -8,6 +8,7 @@ class Prompt extends React.Component {
     super(props);
     this.state = {
       imagefile: null,
+      imagename: "",
       text: "",
       prompt: this.props.streamData["prompts"][0].title
     };
@@ -17,7 +18,10 @@ class Prompt extends React.Component {
     if (!event.target.files[0]) {
       return;
     }
-    this.setState({ imagefile: event.target.files[0] });
+    this.setState({
+      imagefile: event.target.files[0],
+      imagename: event.target.files[0].name
+    });
   };
 
   textInputHandler = event => {
@@ -25,6 +29,7 @@ class Prompt extends React.Component {
   };
 
   render() {
+    console.log(this.state.imagename);
     return (
       <div>
         <div className="Prompt">{this.state.prompt}</div>
@@ -55,9 +60,16 @@ class Prompt extends React.Component {
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Globe_icon.svg/768px-Globe_icon.svg.png"
           />
           <Button className="Categories">#CATEGORIES</Button>
+          <p className="ImgName">{this.state.imagename}</p>
         </div>
         <form method="post" encType="multipart/form-data">
-          <input type="file" id="file" className="inputfile" accept="image/*" />
+          <input
+            type="file"
+            id="file"
+            className="inputfile"
+            accept="image/*"
+            onChange={this.fileChangedHandler}
+          />
           <Button className="Post" type="submit">
             Post
           </Button>

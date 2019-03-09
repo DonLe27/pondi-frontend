@@ -60,6 +60,13 @@
   bottom: 1vh;
 }
 
+.ImgName {
+  position: absolute;
+  right: 5vw;
+  font-size: 2vh;
+  font-family: Barlow;
+}
+
 .inputfile {
   width: 0.1px;
   height: 0.1px;
