@@ -47,13 +47,6 @@ class LovePrompt extends React.Component {
             onChange={this.textInputHandler}
             placeholder="Type your response here"
           />
-          <input
-            type="file"
-            id="file"
-            className="inputfile"
-            accept="image/*"
-            onChange={this.fileChangedHandler}
-          />
           <label for="file" className="Upload">
             <img src="https://images.vexels.com/media/users/3/153834/isolated/preview/d0679e2704e98a8041508fba4c332d49-paper-clip-stroke-icon-by-vexels.png" />
           </label>
@@ -73,9 +66,18 @@ class LovePrompt extends React.Component {
           />
         </div>
 
-        <Button className="Post" onClick={this.uploadHandler}>
-          Post
-        </Button>
+        <form method="post" encType="multipart/form-data">
+          <input
+            type="file"
+            id="file"
+            className="inputfile"
+            accept="image/*"
+            onChange={this.fileChangedHandler}
+          />
+          <Button className="Post" type="submit">
+            Post
+          </Button>
+        </form>
       </div>
     );
   }
