@@ -34,7 +34,7 @@ class SideBar extends React.Component {
     var addStream = this.props.addStream;
     var addOcean = this.props.addOcean;
     var addArchive = this.props.addArchive;
-    var addPrompt = this.props.addPrompt;
+    var addLovePrompt = this.props.addLovePrompt;
 
     return (
       <div className="SideBar">
@@ -72,8 +72,8 @@ class SideBar extends React.Component {
           className="Button"
           block
           bsSize="large"
-          addArchive={this.props.addPrompt}
-          onClick={i => addPrompt("somevar")}
+          addArchive={this.props.addLovePrompt}
+          onClick={i => addLovePrompt("somevar")}
         >
           prompt
         </Button>

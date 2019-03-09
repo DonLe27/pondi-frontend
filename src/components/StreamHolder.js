@@ -8,7 +8,7 @@ import Stream from "./Stream.js";
 import Ocean from "./Ocean.js";
 import Archive from "./Archive.js";
 import SideBar from "./SideBar.js";
-import Prompt from "./Prompt.js";
+import LovePrompt from "./LovePrompt.js";
 
 class StreamHolder extends React.Component {
   constructor(props) {
@@ -80,7 +80,7 @@ class StreamHolder extends React.Component {
           addStream={this.addStream.bind(this)}
           addArchive={this.addArchive.bind(this)}
           addOcean={this.addOcean.bind(this)}
-          addPrompt={this.addPrompt.bind(this)}
+          addLovePrompt={this.addLovePrompt.bind(this)}
         />
       ),
       rightSide: (
@@ -96,7 +96,7 @@ class StreamHolder extends React.Component {
     this.addStream = this.addStream.bind(this);
     this.addOcean = this.addStream.bind(this);
     this.addArchive = this.addStream.bind(this);
-    this.addPrompt = this.addStream.bind(this);
+    this.addLovePrompt = this.addStream.bind(this);
   }
 
   handleAdd(i) {}
@@ -183,7 +183,7 @@ class StreamHolder extends React.Component {
     }
   }
 
-  addPrompt(i) {
+  addLovePrompt(i) {
     if (!this.state.prompt) {
       setTimeout(
         function() {
@@ -191,7 +191,7 @@ class StreamHolder extends React.Component {
         }.bind(this),
         100
       );
-      const right = <Prompt key={3} streamData={this.streamData} />;
+      const right = <LovePrompt key={3} streamData={this.streamData} />;
       setTimeout(
         function() {
           this.setState({ rightSide: right });
