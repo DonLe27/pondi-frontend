@@ -66,7 +66,11 @@ class LovePrompt extends React.Component {
         </div>
 
         <div className="Imagebox">
-          <img className="Photo" src={this.state.imagefile} />
+          <img
+            className="Photo"
+            src={this.state.imagefile}
+            alt="Upload Image"
+          />
         </div>
 
         <Button className="Post" onClick={this.uploadHandler}>

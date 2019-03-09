@@ -71,12 +71,16 @@
 }
 
 .Photo {
-  padding-top: 3vh;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+  top: 3vh;
+  left: 0;
+  right: 0;
+  margin: auto;
   width: 19vw;
   height: 35vh;
+  background-color: #e2ecf3;
+  font-family: Barlow;
+  text-align: center;
 }
 
 .inputfile {
