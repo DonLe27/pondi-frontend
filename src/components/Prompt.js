@@ -9,20 +9,19 @@ class Prompt extends React.Component {
     this.state = {
       imagefile: null,
       text: "",
-      prompt: "This is where the prompt goes"
+      prompt: this.props.streamData["prompts"][0].title
     };
   }
 
   fileChangedHandler = event => {
+    if (!event.target.files[0]) {
+      return;
+    }
     this.setState({ imagefile: event.target.files[0] });
   };
 
   textInputHandler = event => {
     this.setState({ text: event.target.value });
-  };
-
-  uploadHandler = () => {
-    console.log(this.state.imagefile);
   };
 
   render() {
