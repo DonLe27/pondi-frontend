@@ -70,6 +70,13 @@
   bottom: 1vh;
 }
 
+.ImgName {
+  position: absolute;
+  right: 5vw;
+  font-size: 2vh;
+  font-family: Barlow;
+}
+
 .Photo {
   position: absolute;
   top: 3vh;

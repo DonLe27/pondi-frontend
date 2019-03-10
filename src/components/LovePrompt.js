@@ -8,6 +8,7 @@ class LovePrompt extends React.Component {
     super(props);
     this.state = {
       imagefile: null,
+      imagename: "",
       text: "",
       prompt:
         "Post a picture of someone you love. What’s one way the made your life better?"
@@ -18,15 +19,14 @@ class LovePrompt extends React.Component {
     if (!event.target.files[0]) {
       return;
     }
-    this.setState({ imagefile: URL.createObjectURL(event.target.files[0]) });
+    this.setState({
+      imagefile: URL.createObjectURL(event.target.files[0]),
+      imagename: event.target.files[0].name
+    });
   };
 
   textInputHandler = event => {
     this.setState({ text: event.target.value });
-  };
-
-  uploadHandler = () => {
-    console.log(this.state.imagefile);
   };
 
   render() {
@@ -59,6 +59,7 @@ class LovePrompt extends React.Component {
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Globe_icon.svg/768px-Globe_icon.svg.png"
           />
           <Button className="Categories">#CATEGORIES</Button>
+          <p className="ImgName">{this.state.imagename}</p>
         </div>
 
         <div className="Imagebox">
