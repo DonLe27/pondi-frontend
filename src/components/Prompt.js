@@ -26,7 +26,7 @@ class Prompt extends React.Component {
 
   uploadHandler = () => {
     console.log(this.state.text);
-    console.log(this.props.post(1, this.state.text, 0, "this is a theme", "o"));
+    console.log(this.props.post(this.props.userid, this.state.text, 0, "this is a theme", "o"));
   };
 
   render() {
@@ -52,7 +52,7 @@ class Prompt extends React.Component {
           />
           <input
             type="file"
-            id="file"
+            id="file"git 
             className="inputfile"
             accept="image/*"
             onChange={this.fileChangedHandler}
