@@ -34,9 +34,27 @@ class SideBar extends React.Component {
     var addOcean = this.props.addOcean;
     var addArchive = this.props.addArchive;
     var addPrompt = this.props.addPrompt;
+    var addSearch = this.props.addSearch;
+    var addSettings = this.props.addSettings;
 
     return (
       <div className="SideBar">
+        <Button
+          className="settings"
+          block
+          bsSize="large"
+          addSettings={this.props.addSettings}
+          onClick={i => addSettings("somevar")}
+        > <img src={process.env.PUBLIC_URL + "settings.png"}></img> </Button>
+
+        <Button
+          className="search"
+          block
+          bsSize="large"
+          addSearch={this.props.addSearch}
+          onClick={i => addSearch("somevar")}
+        > <img src={process.env.PUBLIC_URL + "search.png"}></img> </Button>
+
         <ProfPic classType="avatar" avatar={this.avatar} />
 
         <Username username={this.username} />

@@ -86,6 +86,33 @@
     z-index: 0;
 }
 
+.settings {
+    position: absolute;
+    border: none;
+    background: none;
+    margin-top: 2vh;
+    margin-left: 1.8vh;
+}
+
+.settings img {
+    height: 2.5vh;
+    width: 2.5vh;
+}
+
+.search {
+    position: absolute;
+    border: none;
+    background: none;
+    margin-top: 2.2vh;
+    margin-left: 6.0vh;
+}
+
+.search img {
+    height: 2.5vh;
+    width: 2.5vh;
+}
+
+
 @media only screen and (min-width: 900px) {
 
     .SideBar {

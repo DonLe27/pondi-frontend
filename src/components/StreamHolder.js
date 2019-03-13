@@ -13,6 +13,8 @@ import Ocean from './Ocean.js';
 import Archive from './Archive.js';
 import SideBar from './SideBar.js';
 import Prompt from './Prompt.js';
+import Settings from './Settings.js';
+import Search from './Search.js';
 
 class StreamHolder extends React.Component {
     constructor(props) {
@@ -66,52 +68,62 @@ class StreamHolder extends React.Component {
             stream: true,
             archive: false,
             ocean: false,
-            prompt: false,
+            prompt: false, 
+            settings: false, 
+            search: false,
             leftSide: <SideBar 
             userData={this.userData}
             addStream={this.addStream.bind(this)} 
             addArchive={this.addArchive.bind(this)}
             addOcean={this.addOcean.bind(this)}
             addPrompt={this.addPrompt.bind(this)}
+            addSettings={this.addSettings.bind(this)}
+            addSearch={this.addSearch.bind(this)}
             />
 
 
 
         };
-        this.handleAdd = this.handleAdd.bind(this);
-        this.addStream = this.addStream.bind(this);
-        this.addOcean = this.addStream.bind(this);
-        this.addArchive = this.addStream.bind(this);
+        
+
     }
 
-    handleAdd(i) {}
 
     addStream(i) {
 
-
-
-        this.setState({ archive: false, stream: true, ocean: false, prompt: false });
-
-
-
+        this.setState({ archive: false, stream: true, ocean: false, prompt: false, settings: false, search: false });
 
     }
 
     addOcean(i) {
 
-        this.setState({ archive: false, stream: false, ocean: true, prompt: false });
+        this.setState({ archive: false, stream: false, ocean: true, prompt: false, settings: false, search: false });
 
     }
 
+    addSearch(i) {
+
+        this.setState({ archive: false, stream: false, ocean: false, prompt: false, settings: false, search: true });
+
+    }
+
+
+    addSettings(i) {
+
+        this.setState({ archive: false, stream: false, ocean: false, prompt: false, settings: true, search: false });
+
+    }
+
+
     addArchive(i) {
 
-        this.setState({ archive: true, stream: false, ocean: false, prompt: false });
+        this.setState({ archive: true, stream: false, ocean: false, prompt: false, settings: false, search: false });
 
     }
 
     addPrompt(i) {
 
-        this.setState({ archive: false, stream: false, ocean: false, prompt: true });
+        this.setState({ archive: false, stream: false, ocean: false, prompt: true, settings: false, search: false });
 
     }
 
@@ -195,7 +207,31 @@ class StreamHolder extends React.Component {
                 )}
         </Motion>
 
-         
+
+        <Motion 
+            defaultStyle={{opacity: 0}}
+            style={{opacity: spring(this.state.settings ? 1 : 0, {stiffness: 50, damping: 20})}}
+        >
+            {(style) => (
+                <div  style={{opacity: style.opacity}}>
+            {this.state.settings && <Settings />}
+                          </div>
+
+                )}
+        </Motion>
+
+
+  <Motion 
+            defaultStyle={{opacity: 0}}
+            style={{opacity: spring(this.state.search ? 1 : 0, {stiffness: 50, damping: 20})}}
+        >
+            {(style) => (
+                <div  style={{opacity: style.opacity}}>
+            {this.state.search && <Search />}
+                          </div>
+
+                )}
+        </Motion>         
        
 
 

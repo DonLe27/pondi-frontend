@@ -121,6 +121,9 @@ export const register = (username, password, first_name, last_name, email) => {
   }
 }
 
+
+
+
 // TODO: Finish update request to update the color and the avatar for the newly-registered profile
 
 export const updateAvatarColor = (first_name, last_name, avatar, color) => {
@@ -175,7 +178,44 @@ export const logout = () => {
     if (token) {
       headers["Authorization"] = `Token ${token}`;
     }
-
     dispatch({type: 'LOGOUT_SUCCESSFUL'});
+  }
+}
+
+
+export const post = (prompt, body, profile, theme, privacy) => {
+  return (dispatch, getState) => {
+    let boddy = JSON.stringify({prompt, body, profile, theme, privacy});
+    console.log(boddy);
+    let headers = {
+      "Content-Type": "application/json",
+      'Accept': 'application/json',
+    //  'Access-Control-Allow-Origin': '*'
+    };
+
+    return fetch(BASE_URL + "/api/auth/myposts/", {headers, boddy, method: "POST"})
+      .then(res => {
+        console.log('Post Response:', res);
+        if (res.status < 500) {
+          return res.json().then(data => {
+            return {status: res.status, data};
+          })
+        } else {
+          console.log("Server Error!");
+          throw res;
+        }
+      })
+      .then(res => {
+        if (res.status === 200) {
+          dispatch({type: 'REGISTRATION_SUCCESSFUL', data: res.data });
+          return res.data;
+        } else if (res.status === 403 || res.status === 401) {
+          dispatch({type: "AUTHENTICATION_ERROR", data: res.data});
+          throw res.data;
+        } else {
+          dispatch({type: "REGISTRATION_FAILED", data: res.data});
+          throw res.data;
+        }
+      })
   }
 }
